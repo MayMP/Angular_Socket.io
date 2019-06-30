@@ -1,0 +1,26 @@
+<div class="card pc1">
+  <div class="card-body">
+    <form [formGroup] = "angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Post Title</label>
+        <input type="text" class="form-control" formControlName = "PostTitle" #PostTitle />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Post Message</label>
+        <textarea 
+          class="form-control" rows = 7 cols = "5" formControlName = "PostMessage" #PostMessage
+        >
+        </textarea>
+      </div>
+      <div class="form-group">
+        <button 
+          (click) = "createPost(PostTitle.value, PostMessage.value)"
+          type="submit" class="btn btn-primary" 
+          [disabled] = "angForm.pristine || angForm.invalid"
+        >
+          Create Post
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

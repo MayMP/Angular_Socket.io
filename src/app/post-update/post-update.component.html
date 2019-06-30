@@ -1,0 +1,29 @@
+<div class="card pu1">
+  <div class="card-body">
+    <form [formGroup] = "angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Post Title</label>
+        <input type="text" class="form-control" 
+          formControlName = "PostTitle" #PostTitle [(ngModel)] = "posts.PostTitle"
+        />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Post Message</label>
+        <textarea 
+          class="form-control" rows = 7 cols = "5" 
+          formControlName = "PostMessage" #PostMessage [(ngModel)] = "posts.PostMessage"
+        >
+        </textarea>
+      </div>
+      <div class="form-group">
+        <button 
+          (click) = "updatePost(PostTitle.value, PostMessage.value)"
+          type="submit" class="btn btn-primary" 
+          [disabled] = "angForm.pristine || angForm.invalid"
+        >
+          Update Post
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

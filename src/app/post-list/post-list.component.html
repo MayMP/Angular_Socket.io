@@ -1,0 +1,17 @@
+<div class = "PostList1"> 
+  <div *ngFor = "let post of posts" class = "border rounded PostList2">
+    <div class = "form-group">
+        <h5> {{post.title}} </h5>
+        <p> {{post.message}} </p>
+    </div>
+    <a (click) = "updatePost(post._id)" class = "btn btn-primary buttonMargin">
+      <b class = "buttonColor"> Update </b>
+    </a>
+    <button (click)="detailPost(post._id)" class = "btn btn-info buttonMargin">
+      <b class = "buttonColor"> Detail </b>
+    </button>
+    <a (click) = "deletePost(post._id)" class = "btn btn-danger">
+      <b class = "buttonColor"> Delete </b>
+    </a>
+  </div>
+</div>
